@@ -584,7 +584,7 @@ export async function checkFinalState(app: PlexoApp): Promise<void> {
       expect(existsSync(state.destinationPath), 'no file left at the destination').toBe(false)
     }
 
-    const stagingPath = `${state.destinationPath}.plexo`
+    const stagingPath = `${state.destinationPath}.gojos`
     await expect
       .poll(() => existsSync(stagingPath), { message: 'staging file cleaned up', timeout: 5000 })
       .toBe(false)

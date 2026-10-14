@@ -37,11 +37,11 @@ test('Show in Finder on a download in progress shows its staging file', async ({
   const { destinationPath } = (await plexo.api.listDownloads()).find(
     (entry) => entry.state.id === id
   )!.state
-  // The final file isn't there yet: what's on disk is `<name>.plexo`.
+  // The final file isn't there yet: what's on disk is `<name>.gojos`.
   expect(await plexo.api.revealDownload(id)).toBe(true)
   expect(
     await plexo.evaluateMain(() => (globalThis as Record<string, unknown>).__revealed, null)
-  ).toEqual([`${destinationPath}.plexo`])
+  ).toEqual([`${destinationPath}.gojos`])
   origin.release()
 })
 

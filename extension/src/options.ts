@@ -72,7 +72,9 @@ element<HTMLFormElement>('add-site').addEventListener('submit', async (event) =>
 })
 
 element('open-plexo').addEventListener('click', () => {
-  void api.runtime.sendMessage({ wakeGojos: true, wakePlexo: true }).then(() => setTimeout(renderConnection, 4000))
+  void api.runtime
+    .sendMessage({ wakeGojos: true, wakePlexo: true })
+    .then(() => setTimeout(renderConnection, 4000))
 })
 
 element('version').textContent = `Extension ${api.runtime.getManifest().version}`

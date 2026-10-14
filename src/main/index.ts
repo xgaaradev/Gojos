@@ -142,11 +142,11 @@ function createWindow(): void {
 }
 
 app.whenReady().then(async () => {
-  electronApp.setAppUserModelId('com.plexo.app')
+  electronApp.setAppUserModelId('com.prrx.gojos')
 
   // A failed move keeps the old file, to retry next launch — it must never stop the window opening.
   await migrateLegacyNetworkPreferences().catch((error) =>
-    console.error('[plexo] failed to migrate network-preferences.json', error)
+    console.error('[gojos] failed to migrate network-preferences.json', error)
   )
 
   // The macOS About window (Gojos › About Gojos); its copyright comes from electron-builder.yml.

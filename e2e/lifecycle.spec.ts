@@ -199,7 +199,7 @@ test.describe('cancel and remove @smoke', () => {
     await reached
     await plexo.api.pauseDownload(id)
     const paused = await plexo.waitForHttpStatus('paused')
-    const staging = `${paused.destinationPath}.plexo`
+    const staging = `${paused.destinationPath}.gojos`
     expect(existsSync(staging), 'pausing keeps the staging file').toBe(true)
     origin.release()
     await plexo.api.cancelDownload(id)

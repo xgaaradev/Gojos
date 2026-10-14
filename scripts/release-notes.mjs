@@ -1,5 +1,5 @@
-/* Copyright (c) 2026 PRRX Cooperation. All rights reserved. */
 #!/usr/bin/env node
+/* Copyright (c) 2026 PRRX Cooperation. All rights reserved. */
 // Builds a GitHub Release from the files in dist/, so the Releases page describes each file the
 // same way the download page does (both use docs/downloads.js).
 //

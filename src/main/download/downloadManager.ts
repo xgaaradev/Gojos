@@ -319,7 +319,8 @@ async function partialLeftovers(persisted: unknown): Promise<string[]> {
   const partial = manifest?.partialPath
   if (typeof partial === 'string' && isAbsolute(partial)) {
     if (partial.endsWith('.gojos') || partial.endsWith('.plexo')) leftovers.push(partial)
-    else if (dirname(partial).endsWith('.gojos') || dirname(partial).endsWith('.plexo')) leftovers.push(dirname(partial))
+    else if (dirname(partial).endsWith('.gojos') || dirname(partial).endsWith('.plexo'))
+      leftovers.push(dirname(partial))
   }
   const placeholder = manifest?.state?.destinationPath
   if (

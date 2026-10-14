@@ -119,7 +119,7 @@ test.describe('persisted state on disk @smoke', () => {
     serve
   }) => {
     await pausedDownload(plexo, serve)
-    const partial = `${(await plexo.currentHttp())!.destinationPath}.plexo`
+    const partial = `${(await plexo.currentHttp())!.destinationPath}.gojos`
     await plexo.quit()
     await rm(partial)
     await plexo.launch()
@@ -155,7 +155,7 @@ test.describe('persisted state on disk @smoke', () => {
 
     // A layout this version doesn't read, with its staging file beside the destination.
     const laterId = '00000000-0000-4000-8000-000000000005'
-    const staging = join(dirs.dest, 'other.iso.plexo')
+    const staging = join(dirs.dest, 'other.iso.gojos')
     await manifest(laterId, {
       version: 5,
       partialPath: staging,
@@ -196,7 +196,7 @@ test.describe('persisted state on disk @smoke', () => {
     const state = (await plexo.currentHttp())!
     const done = state.blocks!.find((block) => block.status === 'completed')!
     await plexo.quit()
-    const staging = `${state.destinationPath}.plexo`
+    const staging = `${state.destinationPath}.gojos`
     await truncate(staging, done.rangeStart + 1000)
 
     await plexo.launch()

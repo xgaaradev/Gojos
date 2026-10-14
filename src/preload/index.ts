@@ -112,6 +112,6 @@ if (process.contextIsolated) {
 } else {
   // @ts-ignore (define in dts)
   window.plexo = plexoApi
-  // @ts-ignore
+  // @ts-ignore (define in dts)
   window.gojos = plexoApi
 }

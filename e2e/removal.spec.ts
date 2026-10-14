@@ -210,7 +210,7 @@ test('cleanup failure keeps an active HTTP download visible and blocks resume du
   const id = await plexo.start(origin.url(), origin.sha256)
   await reached
   const state = (await plexo.currentHttp())!
-  const staging = `${state.destinationPath}.plexo`
+  const staging = `${state.destinationPath}.gojos`
   await plexo.evaluateMain((_electron, path) => {
     const fs = process.getBuiltinModule('node:fs/promises')
     const original = fs.rm
